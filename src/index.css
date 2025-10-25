@@ -1,0 +1,10 @@
+:root {
+  font-family: sans-serif;
+  --primary-size: 50px;
+  --primary-color: #333;
+  --bg-color: #000000;
+}
+
+body {
+  all: unset;
+}

@@ -1,0 +1,9 @@
+.app {
+  background-color: var(--bg-color);
+  height: 100vh;
+}
+
+h1 {
+  font-size: var(--primary-size);
+  color: var(--primary-color);
+}
