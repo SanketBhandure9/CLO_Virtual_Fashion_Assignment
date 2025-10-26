@@ -1,0 +1,27 @@
+.other-filters {
+  padding: 15px 20px;
+  background-color: var(--bg-secondary);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 25px;
+  font-size: var(--secondary-size);
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--primary-color);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-item-input input[type="checkbox"] {
+  accent-color: #000000;
+}

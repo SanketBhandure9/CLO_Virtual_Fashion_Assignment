@@ -1,8 +1,10 @@
 :root {
   font-family: sans-serif;
-  --primary-size: 50px;
-  --primary-color: #333;
+  --primary-size: 18px;
+  --secondary-size: 16px;
+  --primary-color: rgb(150, 150, 159);
   --bg-color: #000000;
+  --bg-secondary: #1a1a1f;
 }
 
 body {

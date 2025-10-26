@@ -3,9 +3,23 @@
   width: 100%;
 }
 
-input {
+.input {
   width: 100%;
-  padding: 8px;
+  padding: 15px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: var(--primary-size);
+  color: #e7e7e8;
+  background-color: var(--bg-secondary);
+  border: none;
+  border-radius: 25px;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #66f0ff;
 }
