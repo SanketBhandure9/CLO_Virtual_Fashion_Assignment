@@ -2,7 +2,6 @@
   background-color: red;
   color: var(--text-color);
   min-height: 100vh;
-  padding: 20px;
   width: 70%;
   margin: 0 auto;
   display: flex;

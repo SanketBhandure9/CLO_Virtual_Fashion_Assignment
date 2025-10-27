@@ -1,5 +1,7 @@
 .input-filter {
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
   width: 100%;
 }
 

@@ -2,7 +2,7 @@
   padding: 15px 20px;
   background-color: var(--bg-secondary);
   width: 100%;
-  margin: 0 auto;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   border-radius: 25px;
