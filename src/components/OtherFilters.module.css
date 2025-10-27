@@ -1,17 +1,18 @@
 .other-filters {
-  padding: 15px 20px;
-  background-color: var(--bg-secondary);
-  width: 100%;
-  max-width: 100%;
+  width: 90% !important;
   display: flex;
   justify-content: space-between;
+  padding: 15px 20px;
+  background-color: var(--bg-secondary);
   border-radius: 25px;
   font-size: var(--secondary-size);
+  box-sizing: border-box;
 }
 
 .checkbox-group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   color: var(--primary-color);
 }
@@ -22,6 +23,16 @@
   gap: 5px;
 }
 
-.checkbox-item-input input[type="checkbox"] {
-  accent-color: #000000;
+.apply-button {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #333;
+  cursor: pointer;
 }

@@ -24,3 +24,9 @@ export const numericToLabels = {
     accessType: "VIEW_ONLY",
   },
 };
+
+export const SORT_OPTIONS = {
+  name: { label: "Item Name", value: "name" },
+  higher: { label: "Higher Price", value: "higher" },
+  lower: { label: "Lower Price", value: "lower" },
+};

@@ -1,9 +1,8 @@
 .app-body {
-  background-color: red;
   color: var(--text-color);
   min-height: 100vh;
   width: 70%;
-  margin: 0 auto;
+  margin: 24px auto;
   display: flex;
   flex-direction: column;
   align-items: center;

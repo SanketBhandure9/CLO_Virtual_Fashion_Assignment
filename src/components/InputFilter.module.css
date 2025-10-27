@@ -1,20 +1,17 @@
 .input-filter {
   display: flex;
   align-items: center;
-  padding: 15px;
-  width: 100%;
+  width: 90%;
 }
 
 .input {
   width: 100%;
   padding: 15px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 25px;
   font-size: var(--primary-size);
   color: #e7e7e8;
   background-color: var(--bg-secondary);
-  border: none;
-  border-radius: 25px;
 }
 
 .input::placeholder {

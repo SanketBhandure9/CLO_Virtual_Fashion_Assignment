@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./InputFilter.module.css";
-import { setSearchText, applyFilters } from "../store/productsSlice.js";
+import { setSearchText, applyFiltersAndSort } from "../store/productsSlice.js";
 
 const InputFilter = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const InputFilter = () => {
 
   const handleSearch = (e) => {
     dispatch(setSearchText(e.target.value));
-    dispatch(applyFilters());
+    dispatch(applyFiltersAndSort());
   };
 
   return (

@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
           <span className={styles.creator}>{creator}</span>
         </span>
         {pricingOption === 0 ? (
-          <p className={styles["product-price"]}>{`$ ${price}`}</p>
+          <p className={styles["product-price"]}>{`$${price}`}</p>
         ) : (
           <p className={styles["product-price"]}>
             {numericToLabels[pricingOption].cardLabel}

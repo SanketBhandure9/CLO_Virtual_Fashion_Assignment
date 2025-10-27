@@ -11,6 +11,7 @@ const productsSlice = createSlice({
       accessType: [],
       searchText: "",
     },
+    sortBy: "name",
     status: "idle",
     error: null,
     chunkSize: 20,
@@ -34,17 +35,13 @@ const productsSlice = createSlice({
     setSearchText(state, action) {
       state.filters.searchText = action.payload;
     },
-    applyFilters(state) {
+    setSortBy(state, action) {
+      state.sortBy = action.payload;
+    },
+    applyFiltersAndSort(state) {
       const { accessType, searchText } = state.filters;
 
       let filtered = [...state.allProducts];
-
-      console.log(
-        "Applying filters:",
-        state.filters,
-        JSON.parse(JSON.stringify(state.allProducts)),
-        JSON.parse(JSON.stringify(filtered))
-      );
 
       if (accessType.length > 0) {
         filtered = filtered.filter((product) =>
@@ -52,17 +49,22 @@ const productsSlice = createSlice({
         );
       }
 
-      console.log(
-        "After filters:",
-        state.filters,
-        JSON.parse(JSON.stringify(filtered))
-      );
-
       if (searchText.trim() !== "") {
         const lowerSearchText = searchText.toLowerCase();
         filtered = filtered.filter((product) =>
           product.title.toLowerCase().includes(lowerSearchText)
         );
+      }
+
+      switch (state.sortBy) {
+        case "higher":
+          filtered = filtered.sort((a, b) => b.price - a.price);
+          break;
+        case "lower":
+          filtered = filtered.sort((a, b) => a.price - b.price);
+          break;
+        default:
+          filtered = filtered.sort((a, b) => a.title.localeCompare(b.title));
       }
 
       state.filteredProducts = filtered;
@@ -102,9 +104,10 @@ export const {
   setError,
   showMoreProducts,
   resetProducts,
-  applyFilters,
+  applyFiltersAndSort,
   toggleAccessType,
   setSearchText,
+  setSortBy,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

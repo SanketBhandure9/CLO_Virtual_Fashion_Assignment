@@ -1,9 +1,7 @@
 .product-card {
   width: 225px;
-  /* height: 350px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .poster {
@@ -16,18 +14,25 @@
 .product-info {
   display: flex;
   color: var(--text-color);
-  align-items: center;
   justify-content: space-between;
+  padding: 0 2px;
 }
 
 .product-titles {
-  padding: 15px 0;
+  padding: 12px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
+  font-size: 12px;
 }
 
 .creator {
   font-size: var(--secondary-size);
   color: rgba(255, 255, 255, 0.591);
+  font-size: 12px;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 16px;
 }

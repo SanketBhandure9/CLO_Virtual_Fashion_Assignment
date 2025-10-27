@@ -6,6 +6,7 @@ import {
   setError,
   setAllProducts,
   showMoreProducts,
+  applyFiltersAndSort,
 } from "../store/productsSlice";
 import ShimmerUI from "./ShimmerUI";
 import ProductCard from "./ProductCard";
@@ -23,6 +24,7 @@ const Products = () => {
         const response = await fetch(PRODUCTS_API_URL);
         const data = await response.json();
         dispatch(setAllProducts(data));
+        dispatch(applyFiltersAndSort());
       } catch (error) {
         dispatch(setError(error.message));
         console.error("Error fetching products: " + error.message, error);
@@ -60,8 +62,8 @@ const Products = () => {
 
   return (
     <div className={styles["products-container"]}>
+      {status === "loading" && <ShimmerUI />}
       <div className={styles["products-list"]}>
-        {status === "loading" && <ShimmerUI />}
         {status !== "loading" &&
           visibleProducts.length > 0 &&
           visibleProducts.map((product) => (

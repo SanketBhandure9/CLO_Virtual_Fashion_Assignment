@@ -1,7 +1,8 @@
 .shimmer-ui {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 16px;
 }
 
 .shimmer-card {

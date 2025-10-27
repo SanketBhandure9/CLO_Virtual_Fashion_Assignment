@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./OtherFilters.module.css";
 import {
-  applyFilters,
+  applyFiltersAndSort,
   resetProducts,
   toggleAccessType,
 } from "../store/productsSlice";
@@ -12,9 +12,8 @@ const OtherFilters = () => {
   const { accessType } = useSelector((state) => state.products.filters);
 
   const handleCheckboxChange = (option) => {
-    console.log("Checkbox changed:", option, accessType);
     dispatch(toggleAccessType(option));
-    dispatch(applyFilters());
+    dispatch(applyFiltersAndSort());
   };
 
   const handleReset = () => {

@@ -1,0 +1,39 @@
+.sort-dropdown-container {
+  all: unset;
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  padding-right: 12px;
+  color: var(--text-color);
+}
+
+.sort-dropdown select {
+  padding: 6px 10px;
+  background-color: black;
+  cursor: pointer;
+  border: none;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+}
+
+.sort-dropdown select:focus {
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.sort-dropdown select:focus-visible {
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.option {
+  background-color: black;
+  padding: 10px;
+}
+
+.option:hover {
+  background-color: var(--bg-secondary);
+  color: #000;
+}
