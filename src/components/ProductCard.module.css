@@ -1,0 +1,33 @@
+.product-card {
+  width: 225px;
+  /* height: 350px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.poster {
+  min-height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info {
+  display: flex;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-titles {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator {
+  font-size: var(--secondary-size);
+  color: rgba(255, 255, 255, 0.591);
+}

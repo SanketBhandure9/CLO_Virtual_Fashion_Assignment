@@ -1,9 +1,15 @@
 import { useEffect, useRef } from "react";
 import { PRODUCTS_API_URL } from "../assets/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading, setError, setAllProducts } from "../store/productsSlice";
+import {
+  setLoading,
+  setError,
+  setAllProducts,
+  showMoreProducts,
+} from "../store/productsSlice";
 import ShimmerUI from "./ShimmerUI";
 import ProductCard from "./ProductCard";
+import styles from "./Products.module.css";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -26,12 +32,44 @@ const Products = () => {
     fetchProducts();
   }, [dispatch]);
 
+  useEffect(() => {
+    if (status !== "succeeded") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            dispatch(showMoreProducts());
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "150px",
+        threshold: 0,
+      }
+    );
+
+    const sentinel = sentinelRef.current;
+    if (sentinel) {
+      observer.observe(sentinel);
+    }
+
+    return () => observer.disconnect();
+  }, [dispatch, status]);
+
   return (
-    <div>
-      {status === "loading" ? (
-        <ShimmerUI />
-      ) : (
-        visibleProducts.map((product) => <ProductCard key={product.id} />)
+    <div className={styles["products-container"]}>
+      <div className={styles["products-list"]}>
+        {status === "loading" && <ShimmerUI />}
+        {status !== "loading" &&
+          visibleProducts.length > 0 &&
+          visibleProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+      </div>
+      {visibleProducts.length === 0 && (
+        <p className={styles["no-products"]}>No products found :(</p>
       )}
       <div ref={sentinelRef}></div>
     </div>
