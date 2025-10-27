@@ -6,7 +6,12 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={styles["product-card"]}>
-      <img src={imagePath} alt={title} className={styles.poster} />
+      <img
+        src={imagePath}
+        alt={title}
+        className={styles.poster}
+        loading="lazy"
+      />
       <div className={styles["product-info"]}>
         <span className={styles["product-titles"]}>
           <span>{title}</span>
